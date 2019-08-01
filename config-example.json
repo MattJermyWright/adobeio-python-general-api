@@ -1,0 +1,24 @@
+{
+  "files": {
+    "api_private_key_file": "/Volumes/HPEKeys/hpe-adobe-apis/20190204_Launch_API_v1.key"
+  },
+  "api": {
+    "client_id": "Adobe GDPR API Client ID here",
+    "client_secret": "Adobe GDPR API Client Secret here",
+    "bearer_token_endpoint": "https://ims-na1.adobelogin.com/ims/exchange/jwt/"
+  },
+  "jwt_template": {
+    "iss": "Adobe Org ID goes here",
+    "sub": "Technical account ID goes here",
+    "https://ims-na1.adobelogin.com/s/ent_gdpr_sdk": true,
+    "aud": "https://ims-na1.adobelogin.com/c/API KEY HERE"
+  },
+  "header_template": {
+    "x-gw-ims-org-id": "<ORG_ID_HERE>",
+    "x-api-key": "<CLIENT_ID_HERE>",
+    "Authorization": "Bearer <BEARER_TOKEN>",
+    "Accept": "application/vnd.api+json;revision=1",
+    "Content-Type": "application/vnd.api+json"
+  },
+  "token_timeout": 1
+}

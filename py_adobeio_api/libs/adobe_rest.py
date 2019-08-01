@@ -5,11 +5,20 @@ from datetime import timedelta, datetime
 import copy
 import requests
 import csv
-from libs.common_auth import get_adobe_bearer_token_with_config
-from libs.log import log
+from .common_auth import get_adobe_bearer_token_with_config
+from .basiclog import log
 
 MIN_EXPIRE_TIME = 1  # Hours until token expires
 
+def load_config_file(filename):
+    fq_config_file = os.path.realpath(filename)
+    try:
+        with open(fq_config_file, "r", encoding="utf-8") as config_pointer:
+            return json.loads(config_pointer.read())
+    except (ValueError, KeyError, TypeError):
+        log.error(
+            "load_config_file: Cannot parse JSON config file: " + fq_config_file)
+    return {}
 
 def expires_timestamp(expires_hours=MIN_EXPIRE_TIME):
     return calendar.timegm((datetime.utcnow() + timedelta(hours=expires_hours)).timetuple())

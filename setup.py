@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='py_adobeio_api',
       version='0.2',
@@ -7,8 +7,8 @@ setup(name='py_adobeio_api',
       author='Matt Wright',
       author_email='matthew.jeremy.wright@gmail.com',
       license='GPLv3.0',
-      install_requires=["jwt", "loguru"],
-      packages=['py_adobeio_api'],
+      install_requires=["jwt", "loguru", "requests"],
+      packages=find_packages(),
       classifiers=[
       "Programming Language :: Python :: 3",
       "License :: OSI Approved :: MIT License",

@@ -5,3 +5,4 @@ original/*
 **/dist/
 **/*.egg-info
 build/*
+**/config.json
